@@ -1,0 +1,24 @@
+info:
+  service: GraphQL
+  description: Detect instances of GraphQL
+  # the headers section is not needed for this template, because anything that you declare as json
+  # will have the content-type json added to the request.
+requests:
+  - method: POST
+    paths:
+      - 'graphql'
+      - 'graphiql'
+      - 'graphql.php'
+      - 'graphql/console'
+      - 'v1'
+      - 'v2'
+      - 'v3'
+    body: '{"query":"query IntrospectionQuery{__schema {queryType { name }}}"}'
+    json: true
+    headers:
+      - name: "Content-Type"
+        value: "application/json"
+    identifiers: 
+      - '\{"data":\{"__schema":\{"queryType":' 
+      - '__schema'
+    ports: [80, 443, 8080]

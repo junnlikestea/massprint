@@ -1,0 +1,16 @@
+info:
+  service: Splunk
+  description: Detect Splunkd Servers
+  #https://docs.splunk.com/Documentation/Splunk/8.0.5/RESTREF/RESTintrospect
+  #https://docs.splunk.com/Documentation/Splunk/8.0.5/RESTREF/RESTlist
+  #https://community.splunk.com/t5/Archive/Information-Disclosure-Vulnerability-Splunk-7-2-4-2/td-p/489717
+requests:
+  - method: GET
+    paths:
+      - '/'
+      - 'catalog/metricstore/metrics'
+    identifiers: 
+      - 'Server: Splunkd' 
+      - 'Splunkd'
+      - 'metricstore-metrics'
+    ports: [80, 443, 8089, 8000]

@@ -1,0 +1,17 @@
+info:
+  service: Jira Instance
+  description: Detect Jira Instances using a small amount of paths
+requests:
+  - method: GET
+    paths:
+      - 'secure/Dashboard.jspa'
+      - '/secure/ManageFilters.jspa?filter=popular&filterView=popular'
+      - '/rest/api/2/project?maxResults=100'
+      - '/rest/api/2/dashboard?maxResults=100'
+      - 'jira/secure/Dashboard.jspa'
+      - 'login.jsp'
+    identifiers:
+      - 'Project Management Software'
+      - 'Atlassian Jira'
+      - 'Jira'
+    ports: [80, 443, 8080]

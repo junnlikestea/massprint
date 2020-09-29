@@ -1,0 +1,12 @@
+info:
+  service: Amazon-S3 Bucket
+  description: Detect S3 bucket
+  #https://github.com/projectdiscovery/nuclei-templates/blob/master/technologies/s3-detect.yaml
+
+requests:
+  - method: GET
+    paths:
+      - '/%c0'
+    identifiers: 
+      - '(?:InvalidURI|InvalidArgument|NoSuchBucket)' 
+    ports: [80, 443]

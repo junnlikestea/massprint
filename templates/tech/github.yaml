@@ -1,0 +1,14 @@
+# https://docs.github.com/en/enterprise/2.19/admin/configuration/network-ports
+info:
+  service: Github
+  description: Detect instances of Github Enterprise
+requests:
+  - method: GET
+    paths:
+      - '/'
+    identifiers: 
+      - 'X-Github' 
+      - 'GitHub . Enterprise'
+      - 'GitHub'
+      - 'Enterprise'
+    ports: [80, 443, 8080, 8443]

@@ -1,0 +1,28 @@
+info:
+  service: Common error log files
+  description: Find some common log files
+  #https://github.com/projectdiscovery/nuclei-templates/blob/master/files/error-logs.yaml
+requests:
+  - method: GET
+    paths:
+      - 'logs/error.log'
+      - 'logs/errors.log'
+      - 'log/error.log'
+      - 'log/errors.log'
+      - 'errors/errors.log'
+      - 'errors/error.log'
+      - 'error.log'
+      - 'errors.log'
+      - 'admin/logs/error.log'
+      - 'admin/logs/errors.log'
+      - 'admin/log/error.log'
+      - 'admin/log/errors.log'
+      - 'admin/error.log'
+      - 'admin/errors.log'
+    identifiers: 
+      - 'Segmentation Fault' 
+      - 'coredump' 
+      - 'script headers' 
+      - 'Broken pipe' 
+      - 'text/plain'
+    ports: [80, 443]

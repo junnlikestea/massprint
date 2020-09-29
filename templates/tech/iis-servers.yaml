@@ -1,0 +1,20 @@
+info:
+  service: Microsoft IIS
+  description: Detect instances of Microsoft IIS servers.
+  # Fingerprint identifiers taken from Shub's Video on IIS.
+  #https://www.youtube.com/watch?v=HrJW6Y9kHC4&feature=youtu.be
+  #https://www.troyhunt.com/shhh-dont-let-your-response-headers/
+
+requests:
+  - method: GET
+    paths:
+      - '/'
+    identifiers: 
+      - '<input[^>]+name="__VIEWSTATE' 
+      - 'X-AspNet-Version:(.+);version:1,'
+      - 'X-AspNet-Version:(.+)'
+      - 'X-AspNetMvc-Version:(.+)'
+      - 'X-Powered-By:^ASP\.NET'
+      - 'ASP\.NET_SessionId'
+      - 'ASPSESSION'
+    ports: [80, 443]

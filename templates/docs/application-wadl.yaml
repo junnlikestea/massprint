@@ -1,0 +1,21 @@
+
+info:
+  service: Application.wadl
+  description: Discover application.wadl files
+  #https://github.com/projectdiscovery/nuclei-templates/blob/master/files/wadl-files.yaml
+requests:
+  - method: GET
+    paths:
+      - 'application.wadl?detail=true'
+      - 'application.wadl'
+      - 'api/application.wadl'
+      - 'api/v1/application.wadl'
+      - 'api/v2/application.wadl'
+      - 'api/v3/application.wadl'
+    identifiers: 
+      - 'This is simplified WADL with user and core resources only' 
+      - 'http://jersey.java.net/'
+      - 'http://wadl.dev.java.net/2009/02'
+      - 'path="application.wadl"'
+      - 'xmlns:xs="http://www.w3.org/2001/XMLSchema"'
+    ports: [80, 443]

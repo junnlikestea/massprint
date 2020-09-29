@@ -1,0 +1,32 @@
+info:
+  service: Swagger
+  description: Find Swagger docs
+  #https://github.com/projectdiscovery/nuclei-templates/blob/master/panels/swagger-panel.yaml
+requests:
+  - method: GET
+    paths:
+      - 'swagger-resources'
+      - 'api/swagger-resources'
+      - 'swagger/index.html'
+      - 'api/swagger/index.html'
+      - 'api/swagger/swagger-ui.html'
+      - 'swagger-ui.html'
+      - 'api-docs/swagger.json'
+      - 'api/swagger.yaml'
+      - 'api/api-docs/swagger.json'
+      - 'api/swagger-ui/swagger.json'
+      - 'api/swagger-ui/api-docs'
+      - 'api/__swagger__/'
+      - 'api/_swagger_/'
+      - 'swagger/api-docs'
+      - 'api/spec/swagger.json'
+      - 'api/swagger/ui/index'
+      - 'api/api/schema'
+      - 'swagger.json'
+      - 'swagger.yml'
+    identifiers: 
+      - 'SwaggerVersion' 
+      - 'Swagger UI' 
+      - 'swagger' 
+      - 'basePath'
+    ports: [80, 443, 8080]

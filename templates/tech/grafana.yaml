@@ -1,0 +1,13 @@
+info:
+  service: Grafana
+  description: Detect instances of Grafana
+
+requests:
+  - method: GET
+    paths:
+      - '/'
+      - 'login'
+    identifiers: 
+      - 'grafana_session' 
+      - 'grafana'
+    ports: [80, 443, 3000]
