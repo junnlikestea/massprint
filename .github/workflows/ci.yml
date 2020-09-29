@@ -21,10 +21,6 @@ jobs:
           target: ${{ matrix.arch }}
           override: true
       
-      - name: Install packages (Ubuntu)
-        run: |
-          ci/ubuntu-packages
-
       - name: Build
         uses: actions-rs/cargo@v1
         with:
