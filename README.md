@@ -25,6 +25,7 @@ $ ./target/release/massprint --version
 
 ### Usage
 **Creating a Template to use**
+
 The massprint templates are very similar to the basic [Nuclei](https://github.com/projectdiscovery/nuclei-templates)
 templates. For example, here is a template to discover Microsoft IIS servers that I created after watching
 [@shubs](https://twitter.com/infosec_au) video [Hacking IIS servers](https://youtu.be/HrJW6Y9kHC4).
@@ -51,6 +52,7 @@ requests:
 check the templates directory for more examples.
 
 **Running a single template across a list of hosts or IPs'**
+
 The targets file can be a list of IP Addresses or subdomains, massprint doesn't 
 currently take input in the form of `http://something.domain.com`.
 ```
@@ -67,6 +69,7 @@ vita -d hackerone.com | massprint -t templates/tech/graphql.yaml
 massprint -i targets.txt -t iis.yaml application-wadl.yaml
 ```
 **Checking the output**
+
 massprint will print the matches to stdout and write all responses into a json file, 
 to quickly check for a match you could use `jq`
 ```
@@ -82,6 +85,7 @@ to quickly check for a match you could use `jq`
 ```
 
 **Splitting a large file into batches and running massprint over a batch**
+
 this setting can be useful when you want to split the workload between multiple 
 nodes or droplets.
 ```
