@@ -108,6 +108,7 @@ pub struct FingerPrint {
 
 impl FingerPrint {
     /// Builds a new `FingerPrint` given a `name` and a Vec of identifiabled strings.
+    #[allow(clippy::all)]
     pub fn new(
         service: String,
         method: String,

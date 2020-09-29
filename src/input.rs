@@ -49,13 +49,13 @@ impl Input {
         //TODO: check that the batch_size is not greater than the input size.
         info!("building batches of size {}", batch_size);
 
-        let bsize = &self.lines.len() / batch_size;
+        let bsize = self.lines.len() / batch_size;
         let batch_iter = self.lines.chunks_exact(bsize);
         let remainder = batch_iter.remainder();
         self.batches
             .extend(batch_iter.map(|b| b.to_vec()).collect::<Vec<Vec<String>>>());
 
-        let last = &self.batches.len() - 1;
+        let last = self.batches.len() - 1;
         if !remainder.is_empty() {
             self.batches[last].extend_from_slice(&remainder);
         }
