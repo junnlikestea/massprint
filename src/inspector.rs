@@ -96,8 +96,8 @@ impl Inspector {
 
         let res = slack.send(&p).await;
         match res {
-            Ok(_) => info!("successfully sent slack notificaiton"),
-            Err(_) => error!("failed to send slack notificaiton"),
+            Ok(_) => info!("successfully sent slack notification"),
+            Err(_) => error!("failed to send slack notification"),
         }
     }
 
@@ -319,7 +319,7 @@ impl Inspector {
                 match out.write_all(&json).await {
                     Err(e) => {
                         error!(
-                            "coudln't write {} bytes to output file; got error {}",
+                            "couldn't write {} bytes to output file; got error {}",
                             json.len(),
                             e
                         );
