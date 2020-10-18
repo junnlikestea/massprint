@@ -120,7 +120,7 @@ Massprint will limit itself to `200` concurrent and parallel tasks, you can chan
 the `-c` flag. 
 
 ```
-massprint -i tagets -t iis.yaml -c 500
+massprint -i targets.txt -t iis.yaml -c 500
 ``` 
 
 ### Thanks
