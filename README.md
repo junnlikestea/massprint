@@ -29,7 +29,7 @@ $ ./target/release/massprint --version
 The massprint templates are very similar to the basic [Nuclei](https://github.com/projectdiscovery/nuclei-templates)
 templates. For example, here is a template to discover Microsoft IIS servers that I created after watching
 [@shubs](https://twitter.com/infosec_au) video [Hacking IIS servers](https://youtu.be/HrJW6Y9kHC4).
-```
+```yaml
 info:
   service: Microsoft IIS
   description: Detect instances of Microsoft IIS servers.
@@ -72,7 +72,7 @@ massprint -i targets.txt -t iis.yaml application-wadl.yaml
 
 massprint will print the matches to stdout and write all responses into a json file, 
 to quickly check for a match you could use `jq`
-```
+```json
 ~$jq -r 'select(.is_match==true)' 2020-9-29-0-mp_results.json
 
 {
