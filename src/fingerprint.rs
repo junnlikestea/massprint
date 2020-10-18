@@ -166,7 +166,7 @@ impl FingerPrint {
             template.method(),
             template.body(),
             template.requests[0].json,
-            template.headers(), // think we need to createa  map of headers not a vec of Header
+            template.headers(), // think we need to create a map of headers not a vec of Header
             template.ports().to_vec(),
             template.paths().to_vec(),
             template.identifiers().to_vec(),
