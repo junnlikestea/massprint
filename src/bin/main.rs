@@ -7,7 +7,7 @@ use massprint::Result;
 fn create_clap_app(version: &str) -> clap::App {
     App::new("massprint")
         .version(version)
-        .about("Fingerprinting Services enmass")
+        .about("Fingerprinting Services en masse")
         .usage("massprint -i <targets.txt> -t <template.yaml>")
         .arg(
             Arg::with_name("input-file")
@@ -42,7 +42,7 @@ fn create_clap_app(version: &str) -> clap::App {
         )
         .arg(
             Arg::with_name("verbosity")
-                .help("verboisty of output")
+                .help("verbosity of output")
                 .short("v")
                 .long("verbosity")
                 .takes_value(true)
